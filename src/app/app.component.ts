@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+
+import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component'
+import { Produto } from './produto'
+
 
 @Component({
   selector: 'myApp-root',
@@ -6,5 +10,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myApp';
+  produtos: Produto[] = []
+  title = 'AngularTest'
+
+  constructor(){
+    let produto = new Produto()
+    produto.id = 1
+    produto.nome = 'Macarrão'
+    this.produtos.push(produto)
+  }
 }
